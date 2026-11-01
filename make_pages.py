@@ -123,7 +123,7 @@ for lang, t in TEXT.items():
         f'\t\t\t<div class="feature"><div class="dot" style="background:var(--{c})">{icon}</div><h3>{h}</h3><p>{p}</p></div>'
         for c, icon, h, p in t["features"])
     shots = "\n".join(f'\t\t\t<img src="{s}" alt="{t["alt"]}" loading="lazy">' for s in t["shots"])
-    decors = "\n".join(f'\t\t\t<div class="decor"><img src="decor_{d}.jpg" alt="{name}" loading="lazy"><span>{name}</span></div>' for d, name in t["decors"])
+    decors = "\n".join(f'\t\t\t<div class="decor"><img src="decor2_{d}.jpg" alt="{name}" loading="lazy"><span>{name}</span></div>' for d, name in t["decors"])
     fr_on = ' class="on"' if lang == "fr" else ""
     en_on = ' class="on"' if lang == "en" else ""
     page = f'''<!doctype html>
