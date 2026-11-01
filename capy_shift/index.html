@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Capy Shift — le jeu kawaii de Dr Capy</title>
-<meta name="description" content="Aide Dr Capy à trier ses fioles ! Un jeu d'arcade kawaii et rapide pour iPhone et Android.">
+<meta name="description" content="Aide Dr Capy à trier ses fioles ! Un jeu d'arcade kawaii et rapide pour iPhone et Android, gratuit.">
 <meta property="og:title" content="Capy Shift">
-<meta property="og:description" content="Aide Dr Capy à trier ses fioles ! Un jeu d'arcade kawaii et rapide pour iPhone et Android.">
+<meta property="og:description" content="Aide Dr Capy à trier ses fioles ! Un jeu d'arcade kawaii et rapide pour iPhone et Android, gratuit.">
 <meta property="og:image" content="https://srnd95.github.io/capy_shift/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffc4dc">
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +18,23 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="hero">
+<header class="hero">
+	<span class="floaty bubble" style="left:24%;top:13%;animation-delay:-2.4s;animation-duration:7.8s;width:22px;height:22px"></span>
+	<span class="floaty" style="left:4%;top:50%;animation-delay:-1.7s;animation-duration:12.0s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty spark" style="left:8%;top:48%;animation-delay:-2.2s;animation-duration:10.9s">✦</span>
+	<span class="floaty bubble" style="left:80%;top:26%;animation-delay:-5.7s;animation-duration:7.1s;width:34px;height:34px"></span>
+	<span class="floaty" style="left:77%;top:20%;animation-delay:-1.9s;animation-duration:10.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
+	<span class="floaty spark" style="left:71%;top:76%;animation-delay:-5.3s;animation-duration:7.4s">✦</span>
+	<span class="floaty bubble" style="left:59%;top:60%;animation-delay:-3.0s;animation-duration:7.9s;width:48px;height:48px"></span>
+	<span class="floaty" style="left:28%;top:83%;animation-delay:-4.9s;animation-duration:11.7s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty spark" style="left:81%;top:5%;animation-delay:-1.8s;animation-duration:10.5s">✦</span>
+	<span class="floaty bubble" style="left:31%;top:68%;animation-delay:-1.2s;animation-duration:9.1s;width:36px;height:36px"></span>
+	<span class="floaty" style="left:43%;top:18%;animation-delay:-1.8s;animation-duration:11.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
+	<span class="floaty spark" style="left:6%;top:8%;animation-delay:-3.8s;animation-duration:8.4s">✦</span>
+	<span class="floaty bubble" style="left:52%;top:44%;animation-delay:-2.1s;animation-duration:12.0s;width:30px;height:30px"></span>
+	<span class="floaty" style="left:8%;top:81%;animation-delay:-3.8s;animation-duration:9.2s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty spark" style="left:19%;top:41%;animation-delay:-3.5s;animation-duration:10.2s">✦</span>
+	<span class="floaty bubble" style="left:21%;top:31%;animation-delay:-5.0s;animation-duration:10.5s;width:35px;height:35px"></span>
 	<div class="wrap">
 		<div class="top">
 			<a class="brand" href="index.html"><img src="favicon.png" alt="">Yuzu Studio</a>
@@ -25,26 +42,42 @@
 		</div>
 		<div class="hero-grid">
 			<div>
+				<span class="pill">Nouveau jeu mobile ✦ gratuit</span>
 				<h1><span class="c1">Capy</span><br><span class="c2">Shift</span></h1>
 				<p class="lead">Aide Dr Capy à trier ses fioles avant que le tapis ne s'emballe !</p>
 				<div class="badges">
-					<span class="badge soon"><svg viewBox="0 0 24 24"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1-2.8-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg><span><small>Bientôt sur</small>App Store</span></span>
-					<span class="badge soon"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.5-9.8L3.6 2.2zm10.6 8.7l2.7-2.8L5.2 1.4l9 9.5zm0 2.2l-9 9.5 11.7-6.7-2.7-2.8zm6.1-2.6l-2.4-1.4-3 3 3 3 2.4-1.4c.8-.4.8-1.7 0-2.2z"/></svg><span><small>Bientôt sur</small>Google Play</span></span>
+					<span class="badge"><svg viewBox="0 0 24 24"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1-2.8-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg><span><small>Bientôt sur</small>App Store</span></span>
+					<span class="badge"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.5-9.8L3.6 2.2zm10.6 8.7l2.7-2.8L5.2 1.4l9 9.5zm0 2.2l-9 9.5 11.7-6.7-2.7-2.8zm6.1-2.6l-2.4-1.4-3 3 3 3 2.4-1.4c.8-.4.8-1.7 0-2.2z"/></svg><span><small>Bientôt sur</small>Google Play</span></span>
 				</div>
 			</div>
 			<div class="hero-art">
-				<img src="hero.jpg" alt="Dr Capy">
+				<img class="portrait" src="hero.jpg" alt="Dr Capy">
+				<div class="phone"><video src="gameplay.mp4" poster="poster.jpg" autoplay muted loop playsinline></video></div>
 				<span class="sticker s1">Glisse !</span>
 				<span class="sticker s2">Gratuit</span>
+				<span class="sticker s3">Kawaii ♥</span>
 			</div>
 		</div>
 	</div>
-</div>
+	<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1440,40 L1440,90 L0,90 Z"/></svg>
+</header>
 
 <section>
 	<div class="wrap">
-		<h2>Un labo plein de surprises</h2>
-		<p class="sub">Consignes qui changent, caïmans à repousser, décors à débloquer…</p>
+		<h2>Comment on joue ?</h2>
+		<p class="sub">Trois gestes, et c'est parti pour des parties endiablées.</p>
+		<div class="steps">
+			<div class="step"><span class="num">1</span><div class="gesture" style="color:var(--pink)">← →</div><h3>Glisse pour lancer</h3><p>À gauche ou à droite : chaque fiole doit finir dans le bon bac, selon la consigne du panneau.</p></div>
+			<div class="step"><span class="num">2</span><div class="gesture" style="color:var(--green)">↓</div><h3>Repousse les caïmans</h3><p>Un caïman sur le tapis ? Glisse vers le bas avant qu'il n'atteigne Dr Capy !</p></div>
+			<div class="step"><span class="num">3</span><div class="gesture" style="color:var(--orange)">↑</div><h3>Attrape les bonus</h3><p>Glisse vers le haut pour croquer un yuzu et déclencher la frénésie !</p></div>
+		</div>
+	</div>
+</section>
+
+<section class="screens">
+	<div class="wrap">
+		<h2>Un labo <span class="hl">plein de surprises</span></h2>
+		<p class="sub">Consignes qui changent, caïman géant, décors de folie…</p>
 		<div class="shots">
 			<img src="shot_fr_1.jpg" alt="Capture du jeu" loading="lazy">
 			<img src="shot_fr_2.jpg" alt="Capture du jeu" loading="lazy">
@@ -54,18 +87,45 @@
 	</div>
 </section>
 
+<section>
+	<div class="wrap">
+		<h2>Débloque des <span class="hl">décors</span></h2>
+		<p class="sub">Transforme le labo et habille Dr Capy comme tu veux.</p>
+		<div class="decors">
+			<div class="decor"><img src="decor_lab.jpg" alt="Labo" loading="lazy"><span>Labo</span></div>
+			<div class="decor"><img src="decor_jungle.jpg" alt="Jungle" loading="lazy"><span>Jungle</span></div>
+			<div class="decor"><img src="decor_beach.jpg" alt="Plage" loading="lazy"><span>Plage</span></div>
+			<div class="decor"><img src="decor_christmas.jpg" alt="Noël" loading="lazy"><span>Noël</span></div>
+			<div class="decor"><img src="decor_halloween.jpg" alt="Halloween" loading="lazy"><span>Halloween</span></div>
+			<div class="decor"><img src="decor_space.jpg" alt="Espace" loading="lazy"><span>Espace</span></div>
+		</div>
+	</div>
+</section>
+
 <section class="features">
 	<div class="wrap">
-		<h2>Pourquoi tu vas l'adorer</h2>
+		<h2>Pourquoi tu vas <span class="hl">l'adorer</span></h2>
 		<p class="sub">&nbsp;</p>
 		<div class="grid">
-			<div class="feature"><div class="dot" style="background:var(--pink)">↔</div><h3>Facile à prendre en main</h3><p>Glisse à gauche ou à droite pour lancer chaque fiole dans le bon bac. Une partie dure quelques minutes.</p></div>
-			<div class="feature"><div class="dot" style="background:var(--orange)">!</div><h3>La consigne change</h3><p>Couleur, forme, bouchon, effet, chaud ou froid : reste concentré, tout s'accélère palier après palier.</p></div>
-			<div class="feature"><div class="dot" style="background:var(--green)">↓</div><h3>Gare aux prédateurs</h3><p>Repousse les caïmans, l'anaconda… et le caïman géant du palier légendaire !</p></div>
-			<div class="feature"><div class="dot" style="background:var(--yellow)">★</div><h3>Des bonus fous</h3><p>Yuzu frénétique, bain onsen, ami oiseau, bébés capys, bulle zen…</p></div>
-			<div class="feature"><div class="dot" style="background:var(--blue)">♥</div><h3>Habille ton capy</h3><p>Chapeaux, tenues, lunettes, effets et décors : jungle, plage, Noël, espace…</p></div>
-			<div class="feature"><div class="dot" style="background:var(--purple)">✓</div><h3>Un défi chaque jour</h3><p>Récompense quotidienne, défis du jour, missions et niveaux. En 16 langues.</p></div>
+			<div class="feature"><div class="dot" style="background:var(--pink)">!</div><h3>La consigne change</h3><p>Couleur, forme, bouchon, effet, chaud ou froid : reste concentré, ça accélère palier après palier.</p></div>
+			<div class="feature"><div class="dot" style="background:var(--green)">★</div><h3>Des bonus fous</h3><p>Yuzu frénétique, bain onsen, ami oiseau, bébés capys, bulle zen…</p></div>
+			<div class="feature"><div class="dot" style="background:var(--orange)">♛</div><h3>Le caïman géant</h3><p>Au palier légendaire, un boss à repousser trois fois. Oseras-tu ?</p></div>
+			<div class="feature"><div class="dot" style="background:var(--blue)">♥</div><h3>Habille ton capy</h3><p>Chapeaux, pyjamas, lunettes cœur, couronne, casque d'astronaute…</p></div>
+			<div class="feature"><div class="dot" style="background:var(--purple)">✓</div><h3>Un défi chaque jour</h3><p>Récompense quotidienne, défis, missions, niveaux et partie du jour.</p></div>
+			<div class="feature"><div class="dot" style="background:var(--yellow)">✦</div><h3>En 16 langues</h3><p>Français, English, Español, Deutsch, 日本語, 한국어, 中文… et plus.</p></div>
 		</div>
+	</div>
+</section>
+
+<section class="cta">
+	<div class="wrap">
+		<img src="apple-touch-icon.png" alt="">
+		<h2>Prêt à aider Dr Capy ?</h2>
+		<p class="sub" style="margin-bottom:0">Capy Shift arrive très bientôt sur iPhone et Android. Gratuit !</p>
+		<div class="badges">
+					<span class="badge"><svg viewBox="0 0 24 24"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1-2.8-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg><span><small>Bientôt sur</small>App Store</span></span>
+					<span class="badge"><svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.5-9.8L3.6 2.2zm10.6 8.7l2.7-2.8L5.2 1.4l9 9.5zm0 2.2l-9 9.5 11.7-6.7-2.7-2.8zm6.1-2.6l-2.4-1.4-3 3 3 3 2.4-1.4c.8-.4.8-1.7 0-2.2z"/></svg><span><small>Bientôt sur</small>Google Play</span></span>
+				</div>
 	</div>
 </section>
 
