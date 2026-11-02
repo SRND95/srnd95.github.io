@@ -115,6 +115,7 @@ TEXT = {
 
 import langs
 import steps_text
+import stages_text
 TEXT.update(langs.entries())
 for code, t in TEXT.items():
     t["steps"] = steps_text.steps(code)
@@ -154,6 +155,10 @@ for lang, t in TEXT.items():
         f'\t\t\t<div class="feature"><div class="dot" style="background:var(--{c})">{icon}</div><h3>{h}</h3><p>{p}</p></div>'
         for c, icon, h, p in t["features"])
     shots = "\n".join(f'\t\t\t<img src="{s}" alt="{t["alt"]}" loading="lazy">' for s in t["shots"])
+    stage = stages_text.section(lang)
+    stages = "\n".join(
+        f'\t\t\t<div class="stage"><img src="stage_{k}.jpg" alt="{name}" loading="lazy"><span class="lvl">{k + 1}</span><span class="nm">{name}</span></div>'
+        for k, name in enumerate(stage["names"]))
     decors = "\n".join(f'\t\t\t<div class="decor"><img src="decor2_{d}.jpg" alt="{name}" loading="lazy"><span>{name}</span></div>' for d, name in t["decors"])
     import json
     page_map = {c: TEXT[c]["file"] for c in ORDER}
@@ -176,7 +181,7 @@ for lang, t in TEXT.items():
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 {redirect}
 </head>
 <body>
@@ -222,6 +227,16 @@ for lang, t in TEXT.items():
 		<p class="sub">{t["shots_sub"]}</p>
 		<div class="shots">
 {shots}
+		</div>
+	</div>
+</section>
+
+<section class="stages-sec">
+	<div class="wrap">
+		<h2>{stage["title"]}</h2>
+		<p class="sub">{stage["sub"]}</p>
+		<div class="stages">
+{stages}
 		</div>
 	</div>
 </section>

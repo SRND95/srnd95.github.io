@@ -117,6 +117,20 @@ h2 .hl { background: linear-gradient(transparent 60%, #ffd25e 60%); padding: 0 6
 .shots img:nth-child(even) { transform: rotate(2.5deg) translateY(16px); }
 .shots img:hover { transform: rotate(0) scale(1.04); }
 
+/* Stages */
+.stages-sec { background: linear-gradient(180deg, #fffaf4 0%, #2a2f5e 100%); }
+.stages-sec h2, .stages-sec .sub { color: var(--ink); }
+.stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: end; }
+.stage { position: relative; border: 4px solid var(--ink); border-radius: 22px; overflow: hidden; box-shadow: 0 8px 0 rgba(0,0,0,0.18); background: #000; }
+.stage:nth-child(1) { transform: translateY(40px); }
+.stage:nth-child(2) { transform: translateY(30px); }
+.stage:nth-child(3) { transform: translateY(20px); }
+.stage:nth-child(4) { transform: translateY(10px); }
+.stage img { display: block; width: 100%; height: auto; }
+.stage .lvl { position: absolute; top: 10px; left: 10px; width: 34px; height: 34px; border-radius: 50%; background: var(--yellow); border: 3px solid var(--ink); display: grid; place-items: center; font-weight: 700; }
+.stage .nm { position: absolute; left: 8px; right: 8px; bottom: 10px; text-align: center; background: #fff; border: 3px solid var(--ink); border-radius: 18px; padding: 3px 6px; font-weight: 700; font-size: 0.95rem; }
+.stage:last-child { box-shadow: 0 0 0 4px #ffd25e, 0 0 30px rgba(255,210,94,0.9); }
+
 /* Decors */
 .decors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .decor { position: relative; border: 4px solid var(--ink); border-radius: 26px; overflow: hidden; box-shadow: 0 8px 0 rgba(61,38,25,0.1); background: #fff; transition: transform 0.25s; }
@@ -155,6 +169,8 @@ footer nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
 	.phone { width: 38vw; margin-left: -12vw; margin-top: 18vw; }
 	.steps, .grid { grid-template-columns: 1fr; }
 	.decors { grid-template-columns: repeat(2, 1fr); }
+	.stages { grid-template-columns: repeat(5, 72vw); overflow-x: auto; padding-bottom: 50px; scroll-snap-type: x mandatory; }
+	.stage { scroll-snap-align: center; }
 	.shots { justify-content: flex-start; }
 	.sticker.s1 { left: 0; }
 	.sticker.s3 { right: 0; }
