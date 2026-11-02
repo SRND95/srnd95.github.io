@@ -53,7 +53,7 @@ TEXT = {
             ("↓", "var(--green)", "Repousse les caïmans", "Un caïman sur le tapis ? Glisse vers le bas avant qu'il n'atteigne Dr Capy !"),
             ("↑", "var(--orange)", "Attrape les bonus", "Glisse vers le haut pour croquer un yuzu et déclencher la frénésie !"),
         ],
-        "shots_title": "Un labo <span class=\"hl\">plein de surprises</span>",
+        "shots_title": "Un labo plein de surprises",
         "shots_sub": "Consignes qui changent, caïman géant, décors de folie…",
         "decor_title": "Débloque des <span class=\"hl\">décors</span>",
         "decor_sub": "Transforme le labo et habille Dr Capy comme tu veux.",
@@ -88,7 +88,7 @@ TEXT = {
             ("↓", "var(--green)", "Push back the caimans", "A caiman on the belt? Swipe down before it reaches Dr Capy!"),
             ("↑", "var(--orange)", "Grab the bonuses", "Swipe up to munch a yuzu and start a frenzy!"),
         ],
-        "shots_title": "A lab <span class=\"hl\">full of surprises</span>",
+        "shots_title": "A lab full of surprises",
         "shots_sub": "Changing rules, a giant caiman, crazy decors…",
         "decor_title": "Unlock <span class=\"hl\">decors</span>",
         "decor_sub": "Transform the lab and dress Dr Capy up your way.",
@@ -143,7 +143,7 @@ for lang, t in TEXT.items():
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="hero">

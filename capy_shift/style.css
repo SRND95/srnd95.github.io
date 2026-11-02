@@ -157,6 +157,16 @@ footer nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
 	.sticker.s1 { left: 0; }
 	.sticker.s3 { right: 0; }
 }
+@media (max-width: 860px) {
+	.steps { gap: 38px; }
+	.sticker.s3 { top: 8%; }
+}
+@media (max-width: 560px) {
+	.decors { grid-template-columns: 1fr; gap: 16px; }
+	.decor span { font-size: 0.95rem; }
+	.shots img { width: 200px; }
+	.hero h1 span { -webkit-text-stroke: 3px var(--ink); }
+}
 @media (prefers-reduced-motion: reduce) {
 	* { animation: none !important; }
 }
