@@ -23,10 +23,11 @@ a { color: inherit; }
 
 /* ---------- Top bar ---------- */
 .top { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; position: relative; z-index: 3; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.brand { white-space: nowrap; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; text-decoration: none; }
 .brand img { width: 42px; height: 42px; border-radius: 12px; border: 3px solid var(--ink); }
 .lang a { text-decoration: none; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
 .lang a.on { background: var(--ink); color: #fff; }
+.langpick { -webkit-appearance: none; appearance: none; padding-right: 30px !important; background: #fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%233d2619' stroke-width='2.5' fill='none'/></svg>") no-repeat right 12px center !important; box-shadow: 0 4px 0 rgba(0,0,0,0.12); font: inherit; font-weight: 700; color: var(--ink); background: #fff; border: 3px solid var(--ink); border-radius: 20px; padding: 6px 12px; cursor: pointer; max-width: 46vw; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -81,8 +82,9 @@ a { color: inherit; }
 .spark { color: #fff; font-size: 1.6rem; text-shadow: 0 0 8px rgba(255,255,255,0.9); }
 
 /* Wave dividers */
-.wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 80px; z-index: 2; }
-.wave path { fill: var(--cream); stroke: var(--ink); stroke-width: 5; }
+.wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 80px; z-index: 2; display: block; overflow: visible; }
+.wave .fill { fill: var(--cream); stroke: none; }
+.wave .line { fill: none; stroke: var(--ink); stroke-width: 5; vector-effect: non-scaling-stroke; }
 .wave.pinkish path { fill: #fff0f6; }
 
 @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
@@ -97,7 +99,7 @@ h2 .hl { background: linear-gradient(transparent 60%, #ffd25e 60%); padding: 0 6
 .sub { text-align: center; font-size: 1.2rem; margin: 0 auto 40px; opacity: 0.85; max-width: 46ch; }
 
 /* How to play */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 38px 22px; }
 .step { background: #fff; border: 4px solid var(--ink); border-radius: 28px; padding: 26px 22px; text-align: center; box-shadow: 0 8px 0 rgba(61,38,25,0.1); position: relative; }
 .step .num { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 42px; height: 42px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 1.2rem; }
 .step .gesture { font-size: 3rem; line-height: 1; margin: 12px 0 8px; font-weight: 700; -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; }
@@ -160,6 +162,12 @@ footer nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
 @media (max-width: 860px) {
 	.steps { gap: 38px; }
 	.sticker.s3 { top: 8%; }
+}
+@media (max-width: 860px) {
+	/* On a phone the floating vials would slip behind texts and stickers. */
+	.floaty.vialf { display: none; }
+	.langpick { font-size: 0.9rem; max-width: 42vw; padding: 5px 10px; }
+	.brand { font-size: 1.05rem; }
 }
 @media (max-width: 560px) {
 	.decors { grid-template-columns: 1fr; gap: 16px; }

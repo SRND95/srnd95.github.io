@@ -8,7 +8,9 @@ EMAIL = "sebastien018@outlook.fr"
 
 APPLE = '<svg viewBox="0 0 24 24"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1-2.8-4.2zM14 5.3c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>'
 PLAY = '<svg viewBox="0 0 24 24"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l9.5-9.8L3.6 2.2zm10.6 8.7l2.7-2.8L5.2 1.4l9 9.5zm0 2.2l-9 9.5 11.7-6.7-2.7-2.8zm6.1-2.6l-2.4-1.4-3 3 3 3 2.4-1.4c.8-.4.8-1.7 0-2.2z"/></svg>'
-WAVE = '<svg class="wave{extra}" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1440,40 L1440,90 L0,90 Z"/></svg>'
+WAVE = ('<svg class="wave{extra}" viewBox="0 0 1440 80" preserveAspectRatio="none">'
+        '<path class="fill" d="M-20,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1460,40 L1460,90 L-20,90 Z"/>'
+        '<path class="line" d="M-20,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1460,40"/></svg>')
 VIAL_COLORS = ["#ff6fae", "#5ab0ff", "#3ddc84", "#ffd25e", "#a77dff", "#ff9f43"]
 
 
@@ -32,7 +34,7 @@ def floaties() -> str:
             size = rng.randint(18, 54)
             items.append(f'<span class="floaty bubble" style="{style};width:{size}px;height:{size}px"></span>')
         elif kind == 1:
-            items.append(f'<span class="floaty" style="{style};opacity:0.85">{vial_svg(VIAL_COLORS[k % len(VIAL_COLORS)])}</span>')
+            items.append(f'<span class="floaty vialf" style="{style};opacity:0.85">{vial_svg(VIAL_COLORS[k % len(VIAL_COLORS)])}</span>')
         else:
             items.append(f'<span class="floaty spark" style="{style}">✦</span>')
     return "\n\t".join(items)
@@ -58,7 +60,7 @@ TEXT = {
         "decor_title": "Débloque des <span class=\"hl\">décors</span>",
         "decor_sub": "Transforme le labo et habille Dr Capy comme tu veux.",
         "decors": [("lab", "Labo"), ("jungle", "Jungle"), ("beach", "Plage"), ("christmas", "Noël"), ("halloween", "Halloween"), ("space", "Espace")],
-        "feat_title": "Pourquoi tu vas <span class=\"hl\">l'adorer</span>",
+        "feat_title": "Pourquoi tu vas l'adorer",
         "features": [
             ("pink", "!", "La consigne change", "Couleur, forme, bouchon, effet, chaud ou froid : reste concentré, ça accélère palier après palier."),
             ("green", "★", "Des bonus fous", "Yuzu frénétique, bain onsen, ami oiseau, bébés capys, bulle zen…"),
@@ -93,7 +95,7 @@ TEXT = {
         "decor_title": "Unlock <span class=\"hl\">decors</span>",
         "decor_sub": "Transform the lab and dress Dr Capy up your way.",
         "decors": [("lab", "Lab"), ("jungle", "Jungle"), ("beach", "Beach"), ("christmas", "Christmas"), ("halloween", "Halloween"), ("space", "Space")],
-        "feat_title": "Why you'll <span class=\"hl\">love it</span>",
+        "feat_title": "Why you'll love it",
         "features": [
             ("pink", "!", "The rule keeps changing", "Color, shape, cork, effect, hot or cold: stay sharp, it speeds up stage after stage."),
             ("green", "★", "Crazy bonuses", "Yuzu frenzy, onsen bath, bird buddy, baby capys, zen bubble…"),
@@ -111,6 +113,35 @@ TEXT = {
     },
 }
 
+import langs
+import steps_text
+TEXT.update(langs.entries())
+for code, t in TEXT.items():
+    t["steps"] = steps_text.steps(code)
+    t["feat_title"] = t["feat_title"].replace('<span class="hl">', "").replace("</span>", "")
+ORDER = list(langs.NATIVE.keys())
+
+
+def switcher(current: str) -> str:
+    options = "".join(
+        f'<option value="{TEXT[c]["file"]}"{" selected" if c == current else ""}>{langs.NATIVE[c]}</option>' for c in ORDER)
+    return f'<select class="langpick" aria-label="Language" onchange="try{{localStorage.setItem(\'capy_lang_set\',\'1\')}}catch(e){{}};location.href=this.value">{options}</select>'
+
+
+# Visitors landing on the French page are sent to their own language once
+# (unless they picked a language themselves).
+REDIRECT = """<script>
+try {
+	if (!localStorage.getItem('capy_lang_set')) {
+		localStorage.setItem('capy_lang_set', '1');
+		var pages = %s;
+		var lang = (navigator.language || 'fr');
+		var page = pages[lang] || pages[lang.split('-')[0]];
+		if (page && page !== 'index.html') location.replace(page);
+	}
+} catch (e) {}
+</script>"""
+
 for lang, t in TEXT.items():
     badges = f'''<div class="badges">
 					<span class="badge">{APPLE}<span><small>{t["soon"]}</small>App Store</span></span>
@@ -124,8 +155,10 @@ for lang, t in TEXT.items():
         for c, icon, h, p in t["features"])
     shots = "\n".join(f'\t\t\t<img src="{s}" alt="{t["alt"]}" loading="lazy">' for s in t["shots"])
     decors = "\n".join(f'\t\t\t<div class="decor"><img src="decor2_{d}.jpg" alt="{name}" loading="lazy"><span>{name}</span></div>' for d, name in t["decors"])
-    fr_on = ' class="on"' if lang == "fr" else ""
-    en_on = ' class="on"' if lang == "en" else ""
+    import json
+    page_map = {c: TEXT[c]["file"] for c in ORDER}
+    page_map.update({"pt": TEXT["pt-BR"]["file"], "zh": TEXT["zh-CN"]["file"], "zh-HK": TEXT["zh-TW"]["file"]})
+    redirect = REDIRECT % json.dumps(page_map) if lang == "fr" else ""
     page = f'''<!doctype html>
 <html lang="{t["html_lang"]}">
 <head>
@@ -143,7 +176,8 @@ for lang, t in TEXT.items():
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=5">
+{redirect}
 </head>
 <body>
 <header class="hero">
@@ -151,7 +185,7 @@ for lang, t in TEXT.items():
 	<div class="wrap">
 		<div class="top">
 			<a class="brand" href="{t["file"]}"><img src="favicon.png" alt="">Yuzu Studio</a>
-			<div class="lang"><a href="index.html"{fr_on}>FR</a><a href="en.html"{en_on}>EN</a></div>
+			{switcher(lang)}
 		</div>
 		<div class="hero-grid">
 			<div>
@@ -223,14 +257,14 @@ for lang, t in TEXT.items():
 
 <footer>
 	<div class="wrap">
-		<nav><a href="{t["privacy_url"]}">{t["privacy"]}</a><a href="mailto:{EMAIL}">{t["contact"]} : {EMAIL}</a><a href="{t["other_url"]}">{t["other"]}</a></nav>
+		<nav><a href="{t["privacy_url"]}">{t["privacy"]}</a><a href="mailto:{EMAIL}">{t["contact"]} : {EMAIL}</a></nav>
 		<p>© 2026 Yuzu Studio</p>
 	</div>
 </footer>
 </body>
 </html>
 '''
-    if lang == "en":
+    if lang != "fr":
         page = page.replace(f"{t['contact']} : {EMAIL}", f"{t['contact']}: {EMAIL}")
     with open(os.path.join(HERE, t["file"]), "w", encoding="utf-8") as f:
         f.write(page)

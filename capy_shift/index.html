@@ -15,30 +15,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=5">
+<script>
+try {
+	if (!localStorage.getItem('capy_lang_set')) {
+		localStorage.setItem('capy_lang_set', '1');
+		var pages = {"fr": "index.html", "en": "en.html", "de": "de.html", "es": "es.html", "it": "it.html", "pt-BR": "pt-BR.html", "ru": "ru.html", "tr": "tr.html", "pl": "pl.html", "ja": "ja.html", "ko": "ko.html", "zh-CN": "zh-CN.html", "zh-TW": "zh-TW.html", "id": "id.html", "th": "th.html", "vi": "vi.html", "pt": "pt-BR.html", "zh": "zh-CN.html", "zh-HK": "zh-TW.html"};
+		var lang = (navigator.language || 'fr');
+		var page = pages[lang] || pages[lang.split('-')[0]];
+		if (page && page !== 'index.html') location.replace(page);
+	}
+} catch (e) {}
+</script>
 </head>
 <body>
 <header class="hero">
 	<span class="floaty bubble" style="left:24%;top:13%;animation-delay:-2.4s;animation-duration:7.8s;width:22px;height:22px"></span>
-	<span class="floaty" style="left:4%;top:50%;animation-delay:-1.7s;animation-duration:12.0s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty vialf" style="left:4%;top:50%;animation-delay:-1.7s;animation-duration:12.0s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
 	<span class="floaty spark" style="left:8%;top:48%;animation-delay:-2.2s;animation-duration:10.9s">✦</span>
 	<span class="floaty bubble" style="left:80%;top:26%;animation-delay:-5.7s;animation-duration:7.1s;width:34px;height:34px"></span>
-	<span class="floaty" style="left:77%;top:20%;animation-delay:-1.9s;animation-duration:10.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
+	<span class="floaty vialf" style="left:77%;top:20%;animation-delay:-1.9s;animation-duration:10.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
 	<span class="floaty spark" style="left:71%;top:76%;animation-delay:-5.3s;animation-duration:7.4s">✦</span>
 	<span class="floaty bubble" style="left:59%;top:60%;animation-delay:-3.0s;animation-duration:7.9s;width:48px;height:48px"></span>
-	<span class="floaty" style="left:28%;top:83%;animation-delay:-4.9s;animation-duration:11.7s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty vialf" style="left:28%;top:83%;animation-delay:-4.9s;animation-duration:11.7s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
 	<span class="floaty spark" style="left:81%;top:5%;animation-delay:-1.8s;animation-duration:10.5s">✦</span>
 	<span class="floaty bubble" style="left:31%;top:68%;animation-delay:-1.2s;animation-duration:9.1s;width:36px;height:36px"></span>
-	<span class="floaty" style="left:43%;top:18%;animation-delay:-1.8s;animation-duration:11.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
+	<span class="floaty vialf" style="left:43%;top:18%;animation-delay:-1.8s;animation-duration:11.1s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#a77dff"/></svg></span>
 	<span class="floaty spark" style="left:6%;top:8%;animation-delay:-3.8s;animation-duration:8.4s">✦</span>
 	<span class="floaty bubble" style="left:52%;top:44%;animation-delay:-2.1s;animation-duration:12.0s;width:30px;height:30px"></span>
-	<span class="floaty" style="left:8%;top:81%;animation-delay:-3.8s;animation-duration:9.2s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
+	<span class="floaty vialf" style="left:8%;top:81%;animation-delay:-3.8s;animation-duration:9.2s;opacity:0.85"><svg class="vial" viewBox="0 0 34 56"><rect x="11" y="2" width="12" height="8" rx="3" fill="#c98f5b" stroke="#3d2619" stroke-width="3"/><path d="M12 10 L12 22 Q2 30 4 42 Q6 54 17 54 Q28 54 30 42 Q32 30 22 22 L22 10 Z" fill="#fff" stroke="#3d2619" stroke-width="3"/><path d="M6 38 Q8 52 17 52 Q26 52 28 38 Z" fill="#5ab0ff"/></svg></span>
 	<span class="floaty spark" style="left:19%;top:41%;animation-delay:-3.5s;animation-duration:10.2s">✦</span>
 	<span class="floaty bubble" style="left:21%;top:31%;animation-delay:-5.0s;animation-duration:10.5s;width:35px;height:35px"></span>
 	<div class="wrap">
 		<div class="top">
 			<a class="brand" href="index.html"><img src="favicon.png" alt="">Yuzu Studio</a>
-			<div class="lang"><a href="index.html" class="on">FR</a><a href="en.html">EN</a></div>
+			<select class="langpick" aria-label="Language" onchange="try{localStorage.setItem('capy_lang_set','1')}catch(e){};location.href=this.value"><option value="index.html" selected>Français</option><option value="en.html">English</option><option value="de.html">Deutsch</option><option value="es.html">Español</option><option value="it.html">Italiano</option><option value="pt-BR.html">Português (Brasil)</option><option value="ru.html">Русский</option><option value="tr.html">Türkçe</option><option value="pl.html">Polski</option><option value="ja.html">日本語</option><option value="ko.html">한국어</option><option value="zh-CN.html">简体中文</option><option value="zh-TW.html">繁體中文</option><option value="id.html">Bahasa Indonesia</option><option value="th.html">ไทย</option><option value="vi.html">Tiếng Việt</option></select>
 		</div>
 		<div class="hero-grid">
 			<div>
@@ -59,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1440,40 L1440,90 L0,90 Z"/></svg>
+	<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path class="fill" d="M-20,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1460,40 L1460,90 L-20,90 Z"/><path class="line" d="M-20,40 C180,90 360,-10 540,35 C720,80 900,5 1080,40 C1260,75 1350,25 1460,40"/></svg>
 </header>
 
 <section>
@@ -68,8 +79,9 @@
 		<p class="sub">Trois gestes, et c'est parti pour des parties endiablées.</p>
 		<div class="steps">
 			<div class="step"><span class="num">1</span><div class="gesture" style="color:var(--pink)">← →</div><h3>Glisse pour lancer</h3><p>À gauche ou à droite : chaque fiole doit finir dans le bon bac, selon la consigne du panneau.</p></div>
-			<div class="step"><span class="num">2</span><div class="gesture" style="color:var(--green)">↓</div><h3>Repousse les caïmans</h3><p>Un caïman sur le tapis ? Glisse vers le bas avant qu'il n'atteigne Dr Capy !</p></div>
-			<div class="step"><span class="num">3</span><div class="gesture" style="color:var(--orange)">↑</div><h3>Attrape les bonus</h3><p>Glisse vers le haut pour croquer un yuzu et déclencher la frénésie !</p></div>
+			<div class="step"><span class="num">2</span><div class="gesture" style="color:var(--green)">↓</div><h3>Repousse les prédateurs</h3><p>Caïman ou anaconda sur le tapis ? Glisse vers le bas ! Le caïman géant du palier légendaire, lui, demande trois coups.</p></div>
+			<div class="step"><span class="num">3</span><div class="gesture" style="color:var(--orange)">↑</div><h3>Attrape les bonus</h3><p>Glisse vers le haut : yuzu (frénésie, points ×2), bain onsen (tapis ralenti), ami oiseau (chasse un prédateur), bulle zen (une erreur pardonnée), bébés capys (pièces en plus), pastèque (une vie en plus).</p></div>
+			<div class="step"><span class="num">4</span><div class="gesture" style="color:var(--blue)">!</div><h3>Suis la consigne</h3><p>Elle change souvent : couleur, forme, bouchon, effet, chaud ou froid. Une erreur, une fiole tombée ou un prédateur raté coûte une vie, et tu n'en as que trois !</p></div>
 		</div>
 	</div>
 </section>
@@ -104,7 +116,7 @@
 
 <section class="features">
 	<div class="wrap">
-		<h2>Pourquoi tu vas <span class="hl">l'adorer</span></h2>
+		<h2>Pourquoi tu vas l'adorer</h2>
 		<p class="sub">&nbsp;</p>
 		<div class="grid">
 			<div class="feature"><div class="dot" style="background:var(--pink)">!</div><h3>La consigne change</h3><p>Couleur, forme, bouchon, effet, chaud ou froid : reste concentré, ça accélère palier après palier.</p></div>
@@ -131,7 +143,7 @@
 
 <footer>
 	<div class="wrap">
-		<nav><a href="privacy.html">Politique de confidentialité</a><a href="mailto:sebastien018@outlook.fr">Contact : sebastien018@outlook.fr</a><a href="en.html">English</a></nav>
+		<nav><a href="privacy.html">Politique de confidentialité</a><a href="mailto:sebastien018@outlook.fr">Contact : sebastien018@outlook.fr</a></nav>
 		<p>© 2026 Yuzu Studio</p>
 	</div>
 </footer>
