@@ -334,7 +334,7 @@ def entries() -> dict:
             "decors": list(zip(DECOR_IDS, t["decors"])),
             "feat_title": hl(t["feat"]),
             "features": [(c, i, h, p) for (c, i), (h, p) in zip(FEATURE_LOOK, t["features"])],
-            "shots": ["shot_en_1.jpg", "shot_en_2.jpg", "shot_en_3.jpg", "shot_en_5.jpg"],
+            "shots": [f"shot_{code}_{k}.jpg" for k in range(1, 7)],
             "alt": t["alt"], "cta_title": t["cta"][0], "cta_sub": t["cta"][1],
             "privacy": t["privacy"], "privacy_url": "privacy-en.html", "contact": t["contact"],
         }

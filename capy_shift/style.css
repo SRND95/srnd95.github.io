@@ -108,7 +108,8 @@ h2 .hl { background: linear-gradient(transparent 60%, #ffd25e 60%); padding: 0 6
 
 /* Screenshots */
 .screens { background: #fff0f6; border-top: 5px solid var(--ink); }
-.shots { display: flex; gap: 24px; overflow-x: auto; padding: 10px 6px 30px; justify-content: center; scroll-snap-type: x mandatory; }
+/* Six shots: three by three on wide screens, a swipeable row on phones. */
+.shots { display: grid; grid-template-columns: repeat(3, 230px); gap: 34px 46px; justify-content: center; padding: 10px 6px 40px; }
 .shots img {
 	width: 230px; flex: 0 0 auto; border-radius: 26px; border: 4px solid var(--ink);
 	box-shadow: 0 10px 0 rgba(61,38,25,0.12); scroll-snap-align: center; transition: transform 0.25s;
@@ -171,7 +172,7 @@ footer nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
 	.decors { grid-template-columns: repeat(2, 1fr); }
 	.stages { grid-template-columns: repeat(5, 72vw); overflow-x: auto; padding-bottom: 50px; scroll-snap-type: x mandatory; }
 	.stage { scroll-snap-align: center; }
-	.shots { justify-content: flex-start; }
+	.shots { display: flex; gap: 24px; overflow-x: auto; justify-content: flex-start; scroll-snap-type: x mandatory; }
 	.sticker.s1 { left: 0; }
 	.sticker.s3 { right: 0; }
 }

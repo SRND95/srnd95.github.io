@@ -69,7 +69,7 @@ TEXT = {
             ("purple", "✓", "Un défi chaque jour", "Récompense quotidienne, défis, missions, niveaux et partie du jour."),
             ("yellow", "✦", "En 16 langues", "Français, English, Español, Deutsch, 日本語, 한국어, 中文… et plus."),
         ],
-        "shots": ["shot_fr_1.jpg", "shot_fr_2.jpg", "shot_fr_3.jpg", "shot_fr_5.jpg"],
+        "shots": [f"shot_fr_{k}.jpg" for k in range(1, 7)],
         "alt": "Capture du jeu",
         "cta_title": "Prêt à aider Dr Capy ?", "cta_sub": "Capy Shift arrive très bientôt sur iPhone et Android. Gratuit !",
         "privacy": "Politique de confidentialité", "privacy_url": "privacy.html",
@@ -104,7 +104,7 @@ TEXT = {
             ("purple", "✓", "A challenge every day", "Daily reward, challenges, missions, levels and the daily run."),
             ("yellow", "✦", "In 16 languages", "English, Français, Español, Deutsch, 日本語, 한국어, 中文… and more."),
         ],
-        "shots": ["shot_en_1.jpg", "shot_en_2.jpg", "shot_en_3.jpg", "shot_en_5.jpg"],
+        "shots": [f"shot_en_{k}.jpg" for k in range(1, 7)],
         "alt": "Game screenshot",
         "cta_title": "Ready to help Dr Capy?", "cta_sub": "Capy Shift is coming very soon to iPhone and Android. Free!",
         "privacy": "Privacy policy", "privacy_url": "privacy-en.html",
@@ -181,7 +181,7 @@ for lang, t in TEXT.items():
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 {redirect}
 </head>
 <body>
